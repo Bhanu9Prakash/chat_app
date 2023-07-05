@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Socket.IO chat</title>
+    <link rel="stylesheet" type="text/css" href = "./styles/chat_styles.css">
+  </head>
+  <body>
+    <ul id="messages"></ul>
+    <form id="form" action="">
+      <input id="input" autocomplete="off" /><button>Send</button>
+    </form>
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <script> 
+        let socket = new io();
+        let form = document.getElementById("form");
+        let input = document.getElementById("input");
+        let messages = document.getElementById("messages");
+
+        let username = "<%= username %>";
+        let room = "<%= room %>";
+
+        // Use the username and room variables as needed
+        // to send the username and room information to the server
+        // when the user joins the chat room.
+        socket.emit("join room", {username: username, room: room});        
+
+        
+        form.addEventListener("submit", function(e){
+            e.preventDefault();
+            const user_message = input.value;
+            if(user_message){
+              socket.emit("chat message", {message: user_message, username: username, room: room});
+              input.value = "";
+            }
+        });
+        
+        socket.on("message", ({message, username}) => {
+            let item = document.createElement("li");
+            item.textContent = username + ": " + message;
+            messages.appendChild(item);
+            window.scrollTo(0, document.body.scrollHeight);
+        });
+
+
+    </script>
+  </body>
+</html>

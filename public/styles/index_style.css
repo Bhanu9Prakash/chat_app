@@ -1,0 +1,68 @@
+body { 
+  margin: 0; 
+  padding: 0; 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+  background-color: #f6f7fb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#room-form-container {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 50px rgba(0,0,0,0.1);
+  width: 30%;
+  min-width: 300px;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+#room-form { 
+  display: flex;
+  flex-direction: column; 
+}
+
+#room-form > label {
+  margin-bottom: 0.5rem;
+  color: #555;
+  font-weight: bold;
+}
+
+#room-form > input {
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 2rem;
+  background: #f3f4f7;
+  transition: 0.3s ease-in-out;
+}
+
+#room-form > input:focus { 
+  outline: none;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+#room-form > button { 
+  background: #333; 
+  border: none; 
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+#room-form > button:focus { 
+  outline: none; 
+}
+
+#room-form > button:hover {
+  background: #444;
+}

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Socket.IO Room Form</title>
+    <link rel="stylesheet" type="text/css" href="/styles/index_style.css">
+  </head>
+  <body>
+    <div id="room-form-container">
+      <h1>Join Chat Room</h1>
+      <form id="room-form" action="/chat" method="POST">
+        <label for="username-input">Username:</label>
+        <input id="username-input" type="text" name="username" autocomplete="off" placeholder="Enter your username" required />
+        <label for="room-input">Room:</label>
+        <input id="room-input" type="text" name="room" autocomplete="off" placeholder="Enter chat room" required />
+        <button type="submit">Join</button>
+      </form>
+    </div>
+
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+  </body>
+</html>
